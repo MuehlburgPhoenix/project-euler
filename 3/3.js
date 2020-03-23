@@ -8,13 +8,12 @@ function factorizeByOddNumbers(number) {
     var factors = [];
     var temporaryNumber = number;
 
-    while (temporaryNumber % 2 == 0) {
+    while (temporaryNumber % 2 == 0 && temporaryNumber > 1) {
         factors.push(2);
         temporaryNumber /= 2;
     }
 
-    for (var i = 3; i <= number; i += 2) {
-        console.log(i);
+    for (var i = 3; i <= number && temporaryNumber > 1; i += 2) {
         if (temporaryNumber % i == 0) {
             factors.push(i);
             temporaryNumber /= i;
@@ -69,4 +68,4 @@ function getAllPrimes(upperLimit) {
     return primes;
 }
 
-console.log(largestPrimeFactor(600851475143));
+largestPrimeFactor(13195);
